@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const TextDiff = require('text-diff');
 
+const PORT = process.env.PORT || 4000;
+
 app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,4 +32,4 @@ app.post('/improve', async (req, res) => {
     });
 });
 
-app.listen(80);
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));

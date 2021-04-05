@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <title>Milou</title>
+
+    <style>
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+        ins {
+            color: green;
+        }
+        del {
+            color: red;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FBD1A2;
+            text-align: center;
+        }
+        #form {
+            padding: 10px;
+            background-color: #ECE4B7;
+            width: 50%;
+            min-height: 300px;
+            min-width: 50%;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            height: 60vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title {
+            text-align: center;
+            text-decoration: underline;
+        }
+        #calculate {
+            padding: 10px;
+            background-color: #33CA7F;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+        #calculate:hover {
+            background-color: #7DCFB6;
+        }
+        .target {
+            display: flex;
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+        .result {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Milou</h1>
+    <form action="/improve" method="POST">
+        <div class="container">
+            <textarea id="form" name="source"></textarea>
+        </div>
+        <button id="calculate" type="submit">Get a better text</button>
+    </form>
+    <% if (result) { %>
+        <h2 class="title">Here is your corrected text:</h2>
+        <div class="target">
+            <div class="result">
+                <%- resultContent %>
+            </div>
+            <div class="result">
+                <h3>Differences:</h3>
+                <%- resultContentDiff %>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

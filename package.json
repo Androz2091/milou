@@ -1,0 +1,13 @@
+{
+  "name": "milou",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Androz2091 <androz2091@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "deepl-scraper": "^1.0.11",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "text-diff": "^1.0.1"
+  }
+}
